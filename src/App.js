@@ -52,7 +52,7 @@ function App ()  {
                     </span>
                   )}
                 </button>
-                <p>Duration: {song.duration}</p>
+                <p> Duration: {song.duration}</p>
                 <p>Release Year: {song.releaseYear}</p>
               </li>
             ))}
