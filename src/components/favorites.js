@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Songs from "./songs";
 
-const Favorites =(songsId) => {
+const Favorites =({songId}) => {
     const [favorites, setFavorites] = useState([]);
 
     const toggleFavorite = (songId) => {
@@ -13,11 +12,11 @@ const Favorites =(songsId) => {
           setFavorites([...favorites, songId]);
         }
       };
+
     return (
         <div>
-            <button onClick={() => toggleFavorite(Songs.id)}>
-
-                {favorites.push() ? (
+            <button onClick={() => toggleFavorite(songId)}>
+                {favorites.includes(songId) ? (
                     <span role="img" aria-label="Red Heart">
                     ❤️
                     </span>

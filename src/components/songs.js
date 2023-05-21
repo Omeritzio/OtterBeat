@@ -32,7 +32,7 @@ const Songs =() => {
                     <h3>{song.title}</h3>
                     <p> Duration: {song.duration}</p>
                     <p>Release Year: {song.releaseYear}</p>
-                    <Favorites/>
+                    <Favorites songId={song.id}/>
                 </li>
                 ))}
             </ul>
