@@ -1,7 +1,7 @@
 import React from 'react';
-import Songs from './components/songs';
+import Songs from './components/Cards/songs';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/home';
+import Home from './components/Home/home';
 
 function App ()  {
   
