@@ -1,46 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Favorites from "./favorites";
 
-const Songs =() => {
-    const [songs, setSongs] = useState([]);
-
-    useState(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch('/Songs.json');
-            if (!response.ok) {
-              throw new Error('Failed to fetch JSON data');
-            }
-            const data = await response.json();
-            setSongs(data);
-          } catch (error) {
-            console.error('Error fetching JSON:', error);
-          }
-        };
-        
-        fetchData();
-      }, []);
-
-      return (
-        <div >
-        {songs.map((artist, index) => (
-            <div key={index}>
-            <h2>{artist.artist}</h2>
+const Songs= (songs)=> {
+    console.log(songs);
+    return ( 
+        <div>
             <ul>
-                {artist.songs.map((song, songIndex) => (
+                {songs?.songs.map((song, songIndex) => (
                 <li key={songIndex} className="bg-light-green dib br3 pa3 grow bw2 shadow-5">
                     <h3>{song.title}</h3>
                     <p> Duration: {song.duration}</p>
                     <p>Release Year: {song.releaseYear}</p>
-                    <Favorites songId={song.id}/>
+                    <Favorites songId={song.songid}/>
                 </li>
                 ))}
             </ul>
-            </div>
-        ))}
         </div>
-      )
+    )
 
 }
 
-export default Songs 
+export default Songs;
