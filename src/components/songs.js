@@ -22,13 +22,13 @@ const Songs =() => {
       }, []);
 
       return (
-        <div>
+        <div >
         {songs.map((artist, index) => (
             <div key={index}>
             <h2>{artist.artist}</h2>
             <ul>
                 {artist.songs.map((song, songIndex) => (
-                <li key={songIndex}>
+                <li key={songIndex} className="bg-light-green dib br3 pa3 grow bw2 shadow-5">
                     <h3>{song.title}</h3>
                     <p> Duration: {song.duration}</p>
                     <p>Release Year: {song.releaseYear}</p>
